@@ -4,7 +4,7 @@ function tt($tt) {
 }
 
 function ts($ts) {
-   return date_format(date_create($ts), "D/M/d/Y");
+   return date_format(date_create($ts), "D");
 }
 
 $p = 1;
