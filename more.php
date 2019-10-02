@@ -25,7 +25,7 @@ $c = json_decode($b, true);
 
 $data = $c['data'];
 $firstImage = "https://picsum.photos/640/360";
-$requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] . "/teleserye.php";
+$requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] . "/more/teleserye";
 ?>
 <!DOCTYPE html>
 <html>
