@@ -82,8 +82,9 @@ $requestURL = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SER
     <div class="container">
       <div class="columns">
         <div class="column is-two-thirds">
-          <figure class="image is-16by9">
-            <iframe class="has-ratio" width="640" height="360"  src="<?php echo $sourceUrl;?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <figure class="image is-16by9" style="cursor:pointer;" onclick="play(this, '<?php echo $sourceUrl;?>');">
+            <img src="<?php echo $image;?>" width="640" height="360">
+            <img src="https://s999.ga/test/play_white.png" style="max-width:128px;max-height:128px;position:absolute;">
           </figure>
           <br>
           <p class="title is-4"><?php echo $title;?></p>
