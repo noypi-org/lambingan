@@ -25,6 +25,7 @@ $b = curl_exec($a);
      curl_close($a);
 
 $c = json_decode($b, true);
+if($c['code']!=200){die('maintenance mode. please try again later.');}
 $d = $c['data'];
 $title = tt($d['title']);
 $image = $d['thumb'];
@@ -70,7 +71,7 @@ $requestURL = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SER
       <div class="navbar-menu">
         <div class="navbar-end">
           <div class="navbar-item">
-            <form action="/search.php" method="GET"><input name="q" type="text" class="input is-rounded" placeholder="Enter your searches" style="width:320px"></form>
+            <form action="/search" method="GET"><input name="q" type="text" class="input is-rounded" placeholder="Enter your searches" style="width:320px"></form>
           </div>
         </div>
       </div>
@@ -125,7 +126,7 @@ $requestURL = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SER
           </a><!--./card-->
           <br>
           </section>
-        <a class="button is-large is-fullwidth is-primary" href="/teleserye.php">- - - M O R E - - -</a>
+        <a class="button is-large is-fullwidth is-primary" href="/more/teleserye">- - - M O R E - - -</a>
         </div><!--./column-->
       </div><!--./columns-->
     </div><!--./container-->

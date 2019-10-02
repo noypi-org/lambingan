@@ -16,16 +16,6 @@ if( isset($_GET['p']) ) {
    $page = intval($_GET['p']);
 }
 
-if( isset($_GET['q']) ) {
-   $q = strip_tags($_GET['q']);
-}
-
-if( !isset($q) && preg_match("/[0-9]/","",$q) ) {
-   die('Error: your search query is empty');
-}
-
-$qs = base64_encode($q);
-
 $a = curl_init("https://pinoybay.ch/api/index.php?page=$page&limit=24");
      curl_setopt($a, CURLOPT_RETURNTRANSFER, 1);
 $b = curl_exec($a);
@@ -74,7 +64,7 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] . "/tel
       <div class="navbar-menu">
         <div class="navbar-end">
           <div class="navbar-item">
-             <form action="/search.php" method="GET"><input name="q" type="text" class="input is-rounded" placeholder="Enter your searches" style="width:320px"></form>
+             <form action="/search" method="GET"><input name="q" type="text" class="input is-rounded" placeholder="Enter your searches" style="width:320px"></form>
           </div>
         </div>
       </div>

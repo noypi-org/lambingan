@@ -35,7 +35,7 @@ $c = json_decode($b, true);
 
 $data = $c['data'];
 $firstImage = "https://picsum.photos/640/360";
-$requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] . "/search?q=" . $q;
+$requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -47,13 +47,13 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] . "/sea
     <meta property="og:url" content="<?php echo $requestUrl;?>">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="lambingan.ga">
-    <meta property="og:title" content="search result for your query `<?php echo $q;?>`">
+    <meta property="og:title" content="page moved.">
     <meta property="og:description" content="ang bagong lambingan. libre lang manood dito ng teleserye. may pinoy tv kasi!">
     <meta property="og:image" content="<?php echo $firstImage;?>">
     <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://s.ytimg.com/yts/img/creator/favicon_32-vflOogEID.png">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-    <title><?php echo $q;?></title>
+    <title>page moved.</title>
   </head>
   <body>
   <div id="fb-root"></div><script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.1&appId=1730508916998105&autoLogAppEvents=1';fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
@@ -81,50 +81,12 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] . "/sea
     </div>
   </nav>
 
-  <section class="section">
-    <div class="container">
-      <div class="columns">
-        <div class="column">
-          <h3 class="is-size-3">Search results for your query `<?php echo $q;?>`</h3>
-          <hr>
-          <?php foreach($data as $d) {;?>
-          <a class="card" style="border:none;box-shadow:none;background:none;" href="<?php echo vt($d['id'], $d['title']);?>">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image">
-                   <img src="<?php echo $d['thumb'];?>" style="max-width:200px;">
-                </figure>
-              </div>
-              <div class="media-content">
-                <div class="content">
-                  <h5 class="is-size-5"><?php echo tt($d['title']);?></h5>
-                  <span class="tags has-addons">
-                  <span class="tag is-info"><?php echo ts($d['uploadts']);?></span>
-                  <span class="tag is-danger"><?php echo $d['host'];?></span>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </a><!--./card-->
-          <br>
-          <?php }?>
-          <?php if( count($data) > 23 ) {?>
-          <hr>
-          <nav class="pagination is-large" role="navigation" aria-label="pagination">
-             <a class="pagination-previous" href="<?php echo $requestUrl;?>&p=<?php echo $page - 1;?>" <?php if($page < 2){echo('disabled');}?>>Previous</a>
-             <a class="pagination-next" href="<?php echo $requestUrl;?>&p=<?php echo $page + 1;?>">Next page</a>
-             <ul class="pagination-list">
-                <li><a class="pagination-link is-current" href="<?php echo $requestUrl;?>&p=<?php echo $page;?>"><?php echo $page;?></a></li>
-                <li><span class="pagination-ellipsis">&hellip;</span></li>
-                <li><a class="pagination-link" href="<?php echo $requestUrl;?>&p=<?php echo $page + 3;?>"><?php echo $page + 3;?></a></li>
-                <li><span class="pagination-ellipsis">&hellip;</span></li>
-                <li><a class="pagination-link" href="<?php echo $requestUrl;?>&p=<?php echo $page + 6;?>"><?php echo $page + 6;?></a></li>
-             </ul>
-           </nav>
-           <?php }?>
-        </div><!--./column-->
-      </div><!--./columns-->
-    </div><!--./container-->
+  <section class="hero is-large is-dark has-text-centered">
+     <div class="hero-body">
+       <div class="container">
+          <h2 class="is-size-2">the page your're looking has been moved.</h2>
+       </div><!--./container-->
+     </div>
   </section>
 
   <?php include('footer.php');?>

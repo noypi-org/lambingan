@@ -59,7 +59,7 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'];
       <div class="navbar-menu">
         <div class="navbar-end">
           <div class="navbar-item">
-            <form action="/search.php" method="GET"><input name="q" type="text" class="input is-rounded" placeholder="Enter your searches" style="width:320px"></form>
+            <form action="/search" method="GET"><input name="q" type="text" class="input is-rounded" placeholder="Enter your searches" style="width:320px"></form>
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'];
           </a><!--./card-->
           <br>
           <?php }?>
-          <a class="button is-large is-fullwidth is-primary" href="/teleserye.php">- - - M O R E - - -</a>
+          <a class="button is-large is-fullwidth is-primary" href="/more/teleserye">- - - M O R E - - -</a>
         </div><!--./column-->
       </div><!--./columns-->
     </div><!--./container-->
