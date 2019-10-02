@@ -1,39 +1,4 @@
 <?php
-function tt($tt) {
-   return str_replace("mp4","", str_replace("."," ", $tt));
-}
-
-function ts($ts) {
-   return date_format(date_create($ts), "D/M/d/Y");
-}
-
-function vt($a, $b) {
-   return $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] . "/watch/" . $a . "/" . preg_replace("/\W/","-", $b);
-}
-
-$page = 1;
-if( isset($_GET['p']) ) {
-   $page = intval($_GET['p']);
-}
-
-if( isset($_GET['q']) ) {
-   $q = strip_tags($_GET['q']);
-}
-
-if( !isset($q) && preg_match("/[0-9]/","",$q) ) {
-   die('Error: your search query is empty');
-}
-
-$qs = base64_encode($q);
-
-$a = curl_init("https://pinoybay.ch/api/search.php?q=$qs&page=$page&limit=24");
-     curl_setopt($a, CURLOPT_RETURNTRANSFER, 1);
-$b = curl_exec($a);
-     curl_close($a);
-
-$c = json_decode($b, true);
-
-$data = $c['data'];
 $firstImage = "https://picsum.photos/640/360";
 $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 ?>
@@ -56,7 +21,6 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] . $_SER
     <title>page moved.</title>
   </head>
   <body>
-  <div id="fb-root"></div><script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v3.1&appId=1730508916998105&autoLogAppEvents=1';fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
   <nav class="navbar is-light" role="navigation" aria-label="main navigation">
     <div class="container">
       <div class="navbar-brand">
