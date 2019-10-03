@@ -72,6 +72,7 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] . "/mor
 
   <section class="section">
     <div class="container">
+      <div class="field"><div class="control"><form action="/search" method="GET"><input name="q" type="text" class="input is-large" id="qs" placeholder="search sample: san oct 1"></form></div></div>
       <div class="columns">
         <div class="column">
           <h3 class="is-size-3">more teleserye to watch...</h3>

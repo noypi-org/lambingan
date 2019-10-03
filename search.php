@@ -82,6 +82,7 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] . "/sea
 
   <section class="section">
     <div class="container">
+      <div class="field"><div class="control"><form action="/search" method="GET"><input name="q" type="text" class="input is-large" placeholder="search sample: san oct 1" id="qs"></form></div></div>
       <div class="columns">
         <div class="column">
           <h3 class="is-size-3">Search results for your query `<?php echo $q;?>`</h3>
