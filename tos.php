@@ -49,7 +49,7 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'] . $_SER
      <div class="hero-body">
        <div class="container">
           <h2 class="is-size-2">Terms of Service</h2>
-          <p>Effective: October 10, 2019</p>
+          <p>Effective: This is only pre-generated TOS, so we don't really need it right now.</p>
           <hr><style>.content h3{color:#ddd;}</style>
           <div class="content">
 	     <h3>1. Terms</h3>
