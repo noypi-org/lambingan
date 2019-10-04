@@ -39,7 +39,6 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'];
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
     <title>ang bagong lambingan. libre teleserye. may pinoy tv!</title>
     <script>var ft = "<?php echo base64_encode(substr($ft['title'],0,10));?>";</script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   </head>
   <body>
   <nav class="navbar is-light" role="navigation" aria-label="main navigation">
@@ -67,32 +66,15 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'];
 
   <section class="section">
     <div class="container">
-      <div class="notification" id="newsflash" style="display:none;">breaking: pinoy tv, lambingan, teleserye google top search trends. <a href="/exit.php?url=https://noypi.org">read more</a></div>
       <div class="columns">
         <div class="column is-two-thirds">
-          <figure class="image is-16by9" style="cursor:pointer;" onclick="play(this, '<?php echo $ft['url'];?>');">
-            <img src="<?php echo $ft['thumb'];?>" width="640" height="360">
-            <img src="https://s999.ga/test/play_white.png" style="max-width:128px;max-height:128px;position:absolute;">
-          </figure>
-          <br>
-          <p class="title is-4"><?php echo tt($ft['title']);?></p>
-          <span class="tags has-addons"><span class="tag is-danger"><?php echo ts($ft['uploadts']);?></span><span class="tag is-info"><?php echo $ft['host'];?></span></span>
-          <hr>
-          <div class="columns" id="relatedUploads">
-          <?php foreach(range(1,4) as $rng){?>
-             <div class="column is-3">
-                <figure class="image">
-                   <img src="https://picsum.photos/200/150">
-                   <p class="is-size-7 has-text-weight-normal">related teleserye is loading...</p>
-                   <span class="tags has-addons"><span class="tag is-dark">10.10.2019</span><span class="tag is-link">lambingan.ga</span></span>
-                </figure>
-             </div>
-          <?php }//end range?>
-          </div>
+           <article class="message"><div class="message-header"><p>Latest News Feed</p></div></article>
+           <nav class="panel">
+           <?php $f = file_get_contents('newsfeed.json'); $j = json_decode($f, true); foreach($j as $p){echo "<div class=\"panel-block\"><a href=\"/exit.php?url=".urlencode($p['link'])."\">{$p['title']}</a></div>";}?>
+           </nav>
         </div>
         <div class="column">
           <article class="message"><div class="message-header"><p>Recently uploaded</p></div></article>
-          <ins class="adsbygoogle"style="display:inline-block;width:336px;height:280px"data-ad-client="ca-pub-3505493023391940"data-ad-slot="1545887713"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
           <?php foreach($c['data'] as $i=>$d) {if($i>0){?>
           <a class="card" style="border:none;box-shadow:none;background:none;" href="<?php echo vt($d['id'], $d['title']);?>">
             <div class="media">
