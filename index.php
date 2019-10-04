@@ -77,6 +77,7 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'];
           <br>
           <p class="title is-4"><?php echo tt($ft['title']);?></p>
           <span class="tags has-addons"><span class="tag is-danger"><?php echo ts($ft['uploadts']);?></span><span class="tag is-info"><?php echo $ft['host'];?></span></span>
+          <a href="/search?q=<?php echo str_replace(" ","+",substr($ft['title'],0,15));?>" class="button is-primary">click here to watch more from this teleserye</a>
           <hr>
           <div class="columns" id="relatedUploads">
           <?php foreach(range(1,4) as $rng){?>
