@@ -27,7 +27,7 @@ if( file_get_contents('php://input') ) {
          if( !file_exists($mail) ) {
             mkdir($mail);
          }
-         $mail = $mail . md5(time() + rand(1,9999)) . ".txt";
+         $mail = $mail . time() . ".txt";
          file_put_contents($mail, $email . ":" . $message);
          $response['code'] = 200;
          $response['text'] = 'success';

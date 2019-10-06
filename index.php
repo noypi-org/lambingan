@@ -31,15 +31,16 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'];
     <meta property="og:url" content="<?php echo $requestUrl;?>">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="lambingan.ga">
-    <meta property="og:title" content="ang bagong lambingan. libre teleserye. may pinoy tv!">
+    <meta property="og:title" content="ang bagong lambingan. pinoy tv at teleserye!">
     <meta property="og:description" content="ang bagong lambingan. libre lang manood dito ng teleserye. may pinoy tv kasi!">
     <meta property="og:image" content="<?php echo $ft['thumb'];?>">
     <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://s.ytimg.com/yts/img/creator/favicon_32-vflOogEID.png">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
-    <title>ang bagong lambingan. libre teleserye. may pinoy tv!</title>
+    <title>ang bagong lambingan. pinoy tv at teleserye!</title>
     <script>var ft = "<?php echo base64_encode(substr($ft['title'],0,10));?>";</script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-3505493023391940",enable_page_level_ads: true});</script>
   </head>
   <body>
   <nav class="navbar is-light" role="navigation" aria-label="main navigation">
