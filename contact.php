@@ -28,7 +28,7 @@ if( file_get_contents('php://input') ) {
             mkdir($mail);
          }
          $mail = $mail . time() . ".txt";
-         file_put_contents($mail, $email . ":" . $message);
+         file_put_contents($mail, '$email:' . $email . '$message:' . $message);
          $response['code'] = 200;
          $response['text'] = 'success';
       }
