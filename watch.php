@@ -95,7 +95,7 @@ $requestURL = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SER
           <?php foreach(range(1,4) as $rng){?>
              <div class="column is-3">
                 <figure class="image">
-                   <img src="https://picsum.photos/200/150">
+                   <img src="https://picsum.photos/200/150?random=<?php echo rand(1,9999);?>">
                    <p class="is-size-7 has-text-weight-normal">related teleserye is loading...</p>
                    <span class="tags has-addons"><span class="tag is-dark">10.10.2019</span><span class="tag is-link">lambingan.ga</span></span>
                 </figure>
