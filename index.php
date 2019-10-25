@@ -39,8 +39,6 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'];
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
     <title>ang bagong lambingan. pinoy tv at teleserye!</title>
     <script>var ft = "<?php echo base64_encode(substr($ft['title'],0,10));?>";</script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({google_ad_client: "ca-pub-3505493023391940",enable_page_level_ads: true});</script>
   </head>
   <body>
   <nav class="navbar is-light" role="navigation" aria-label="main navigation">
@@ -94,7 +92,6 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'];
         </div>
         <div class="column">
           <article class="message"><div class="message-header"><p>Recently uploaded</p></div></article>
-          <ins class="adsbygoogle"style="display:inline-block;width:336px;height:280px"data-ad-client="ca-pub-3505493023391940"data-ad-slot="1545887713"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
           <?php foreach($c['data'] as $i=>$d) {if($i>0){?>
           <a class="card" style="border:none;box-shadow:none;background:none;" href="<?php echo vt($d['id'], $d['title']);?>">
             <div class="media">
