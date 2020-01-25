@@ -1,4 +1,21 @@
 <?php
+function tx($tt) {
+   $months = array('january','february','march','april','may','june','july','august','september','october','november','december');
+   $word = preg_split("/\W/", $tt);
+   $words = array();
+   $wordcount = 0;
+
+   while($wordcount < 4) {
+      if( !in_array($word[$wordcount], $months) ){
+         array_push($words, $word[$wordcount]);
+      }
+      else{ break; }
+
+      $wordcount++;
+   }
+   return join(' ', $words);
+}
+
 function tt($tt) {
    return str_replace("mp4","", str_replace("."," ", $tt));
 }
@@ -89,7 +106,7 @@ $requestURL = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SER
           <br>
           <p class="title is-4"><?php echo $title;?></p>
           <span class="tags has-addons"><span class="tag is-danger"><?php echo $uploadts;?></span><span class="tag is-info"><?php echo $source;?></span></span>
-          <a href="/search?q=<?php echo str_replace(" ","+",substr($title,0,15));?>" class="button is-primary">click here to watch more from this teleserye</a>
+          <a href="/search?q=<?php echo tx($title);?>" class="button is-primary">click here to watch more from this teleserye</a>
           <hr>
           <div class="columns" id="relatedUploads">
           <?php foreach(range(1,4) as $rng){?>

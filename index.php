@@ -1,4 +1,21 @@
 <?php
+function tx($tt) {
+   $months = array('january','february','march','april','may','june','july','august','september','october','november','december');
+   $word = preg_split("/\W/", $tt);
+   $words = array();
+   $wordcount = 0;
+
+   while($wordcount < 4) {
+      if( !in_array($word[$wordcount], $months) ){
+         array_push($words, $word[$wordcount]);
+      }
+      else{ break; }
+
+      $wordcount++;
+   }
+   return join(' ', $words);
+}
+
 function tt($tt) {
    return str_replace("mp4","", str_replace("."," ", $tt));
 }
@@ -66,6 +83,7 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'];
 
   <section class="section">
     <div class="container">
+      <div class="notification is-warning" style="display:none;">Player may no longer work. We recommend to use the source <a href="https://pinoybay.ch">[ click here ]</a></div>
       <div class="notification" id="newsflash" style="display:none;">breaking: pinoy tv, lambingan, teleserye google top search trends. <a href="/exit.php?url=https://noypi.org">read more</a></div>
       <div class="columns">
         <div class="column is-two-thirds">
@@ -76,7 +94,7 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'];
           <br>
           <p class="title is-4"><?php echo tt($ft['title']);?></p>
           <span class="tags has-addons"><span class="tag is-danger"><?php echo ts($ft['uploadts']);?></span><span class="tag is-info"><?php echo $ft['host'];?></span></span>
-          <a href="/search?q=<?php echo str_replace(" ","+",substr($ft['title'],0,15));?>" class="button is-primary">click here to watch more from this teleserye</a>
+          <a href="/search?q=<?php echo tx($ft['title']);?>" class="button is-primary">click here to watch more from this teleserye</a>
           <hr>
           <div class="columns" id="relatedUploads">
           <?php foreach(range(1,4) as $rng){?>
@@ -91,6 +109,13 @@ $requestUrl = $_SERVER['REQUEST_SCHEME'] . "://" . $_SERVER['HTTP_HOST'];
           </div>
         </div>
         <div class="column">
+          <?php if(isset($teleserye)) {?>
+          <article class="message is-danger"><div class="message-header"><p>Teleserye</p></div></article>
+            <div class="content">
+              <ul style="list-style:none;margin:0;">
+                <li><a class="button is-fullwidth is-medium is-info" href="#"></a></li>
+              </ul></div><br><br>
+          <?php }?>
           <article class="message"><div class="message-header"><p>Recently uploaded</p></div></article>
           <?php foreach($c['data'] as $i=>$d) {if($i>0){?>
           <a class="card" style="border:none;box-shadow:none;background:none;" href="<?php echo vt($d['id'], $d['title']);?>">
